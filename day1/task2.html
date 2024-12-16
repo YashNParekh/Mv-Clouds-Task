@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="display: flex; align-items: center; justify-content: center;">
+
+    <form style=" border: #4D7585 20px solid; border-radius: 1px;" action="#">
+
+        <section id="section1" style="background-color: lightgrey; border-bottom: 1px solid gray; text-align: center;padding: 20px;font-size: 30px;font-weight: 600;"> 
+            <span style="color:#656766 ;"> Create Account </span>
+        </section>
+
+
+        <section id="section2" style="padding: 30px;" >
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <label for="fname" class="label1">First Name* </label><br>
+                            <input class="input1" type="text" name="" id="fname" required placeholder="enter your first name">
+                        </td>
+                        <td>
+                            <label for="lname" class="label1">Last Name </label><br>
+                            <input class="input1" type="text" name="" id="lname" placeholder="enter your last name">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <label for="email" class="label1">Email* </label><br>
+                            <input required style="width: 94%;" class="input1" type="email" name="" id="email" placeholder="enter your email">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="pass" class="label1">Password* </label><br>
+                            <input class="input1" type="text" name="" id="pass" required placeholder="enter your Password">
+                        </td>
+                        <td>
+                            <label for="confpass" class="label1">Confirm Password* </label><br>
+                            <input class="input1" type="text" name="" id="confpass" required placeholder="enter your Password again">
+                        </td>
+                        
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td>
+                            <label for="" class="label1">Gender </label><br>
+                            <label for="male"> <input type="radio" name="Gender" id="male"> Male </label>
+                            <label for="female"> <input type="radio" name="Gender" id="female"> Female </label>
+                            
+                        </td>
+                        <td>
+                            <label for="" class="label1">Hobbies </label><br>
+                            <label for="Music"> <input type="checkbox" name="Music" id="Music"> Music</label>
+                            <label for="Sports"> <input type="checkbox" name="Sports" id="Sports"> Sports</label>
+                            <label for="Travel"> <input type="checkbox" name="Travel" id="Travel"> Travel</label>
+                            <label for="Movies"> <input type="checkbox" name="Movies" id="Movies"> Movies</label>
+                            
+                        </td>
+                        
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <label for="SourceofIncome" class="label1">Source of Income </label><br>
+                            <select class="input1" style="color: black;" name="" id="SourceofIncome">
+                                <option value="Employed">Employed</option>
+                                <option value="Self-Employed">Self-Employed</option>
+                                <option value="Unemployed">Unemployed</option>
+                                <option value="Student">Student</option>
+                            </select>
+                            
+                        </td>
+                        <td >
+                            <label for="income" class="label1">Income 
+                                <br>
+                                <input class="input1" style="width: 80%;"  type="range" min="20" max="100" value="20" name="" id="income" >
+                                <div id="outincome" style="float: right; padding: 3px; border-radius: 5px; color: white; background: #2AB897;">20K</div>
+                                <script>
+                                    document.getElementById("income").oninput = function(e) {
+                                        document.getElementById("outincome").innerHTML = this.value + "K";
+                                    }
+                                </script>
+                                
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="upp" class="label1">Upload Profile Picture </label><br>
+                            <input class="input1" style="border: none;" type="file" name="" id="upp" >
+                        </td>
+                        <td>
+                            <label for="age" class="label1">Age </label><br>
+                            <input class="input1" type="number" name="" id="age" min="18" max="56" value="18" style="color: black;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <label for="bio" class="label1">Bio </label><br>
+                            <textarea  style="height: 60px; width: 96%;"   name="" id="bio" >
+                            </textarea>
+                        </td>
+                    </tr>
+                    
+                </table>
+        </section>
+        <section id="section1" style="background-color: lightgrey; border-top: 1px solid gray; text-align: right;;padding: 20px;font-size: 30px;font-weight: 600;"> 
+            <button type="submit" style=" border: none; background-color: #2AB897; color: white; padding: 10px 20px;border-radius: 5px; " >Create</button>
+        </section>
+    </form>
+</div>
+
+
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .label1{
+            color:#2AB897 ;
+        }
+        td{
+            padding-top: 20px;
+        }
+        .input1{
+            padding: 7px;
+            color: rgba(128, 128, 128, 0.501);
+            border: 1px solid rgba(128, 128, 128, 0.675);
+            border-radius: 3px;
+            width: 90%;
+        }
+    </style>
+
+</body>
+</html>
