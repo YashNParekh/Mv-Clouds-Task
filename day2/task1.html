@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 100vh;width: 100vw;display: flex;align-items: center;justify-content: center;">
+        <form action="#" id="form"  >
+
+            <section>
+                <div class="T1">
+                    <span class="index">1</span>
+                    <span class="title"> Candidate Info</span>
+                </div>
+                
+                <input type="text" required placeholder="Your Name *">
+                <input type="email" required placeholder="Your Email *">
+                <textarea name="" id="AboutSelf" placeholder="About Yourself" ></textarea>
+                <label for="interests">
+                    <span style="font-size: large; font-family: 'Times New Roman', Times, serif;"> Interests</span>
+                </label>
+                <select name="interests" id="interests">
+                    <option value="Fishkeeping">Fishkeeping</option>
+                    <option value="Traveling">Traveling</option>
+                    <option value="Photography">Photography</option>
+                </select>
+            </section>
+            <section>
+                <div class="T1">
+                    <span class="index">2</span>
+                    <span class="title"> Additional Info</span>
+                </div>
+                <textarea name="" id="Additionalinfo" placeholder="About Your School" ></textarea>    
+            </section>
+            <section style="margin: 15px 0px;">
+                    <button type="submit" style="cursor: pointer; border: none;box-shadow: 0px 0px 3px black;  padding: 15px; width: 100%;display: inline-block;background-color: #186EBC; color: white;">
+                        Submit
+                    </button>
+            </section>
+
+        </form>
+    </div>
+
+    <!-- style tag  -->
+    
+    <style>
+
+        
+        #form{
+
+            height: fit-content;
+            width: 50%;
+            padding: 20px;
+            background:#F5F7F8 ;
+
+
+            .T1{
+                margin: 20px 0px 20px 0px;
+
+                .index{
+                    padding: 10px 15px;
+                    color: white;
+                    border: none ;
+                    border-radius: 50% 50% 50% 0% / 48% 50% 50% 0% ;
+                    margin-right: 10px;
+                    background: #186EBC;
+                }
+                .title{
+                    font-weight: 900;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: 25px;
+                    font-weight: 500;
+                }
+            }
+
+            section{
+                display: block;
+                width: 100%;
+                margin: 20px 0px;
+            }
+            
+
+            input,textarea,select{
+                display: block;
+                color: #B0B4B5;
+                margin: 15px 0px;
+                padding: 8px 10px;
+                width: 90%;
+                border: none;
+                border-radius: 3px;
+                background: #E8EEEF;
+            }
+            select{
+                width: 95%;
+            }
+        }
+            </style>
+    
+    
+    
+    
+</body>
+</html>

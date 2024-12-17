@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form  name="form1" style="border: 1px black solid ; width: fit-content;padding: 15px;">
+        <label for="username">Username: </label>
+        <input type="text"  id="username">
+        <br><br>
+        <label for="password">Password: </label>
+        <input type="text" id="password"> 
+        <br><br>
+        <span >Gender: </span>
+        <label for="male"> <input type="radio" value="Male" name="Gender" id="male"> Male </label>
+        <label for="female"> <input type="radio" value="Female" name="Gender" id="female"> Female </label>
+        <br><br>
+        <label for="dropdown">Dropdown Menu: </label>
+        <select name="dropdown" id="dropdown">
+            <option selected>select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br><br>
+        <button type="submit" >Submit</button>
+    </form>
+    
+
+    <script type="module">
+
+        let form1 = document.form1;
+        
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase,set,ref,get,child   } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyDseZSlr7icXThOZAApTA0XBFB8F4836-k",
+        authDomain: "my-project-d8aed.firebaseapp.com",
+        projectId: "my-project-d8aed",
+        storageBucket: "my-project-d8aed.firebasestorage.app",
+        messagingSenderId: "369292604400",
+        appId: "1:369292604400:web:f5297654284957107da335",
+        measurementId: "G-7AGET8Q5CB"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        form1.onsubmit = function(e){
+            e.preventDefault();
+            console.log(form1.username.value);
+            console.log(form1.password.value);
+            console.log(form1.Gender.value);
+            console.log(form1.dropdown.value);
+            set(ref(db, 'users/' + form1.username.value), {
+                username: form1.username.value,
+                password: form1.password.value,
+                gender: form1.Gender.value,
+                dropdown: form1.dropdown.value
+            });
+        }
+
+        alert("data saved");
+
+    </script>
+    
+</body>
+</html>
