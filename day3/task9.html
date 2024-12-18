@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        
+    </div>
+
+    <script>
+
+        //  A -  Z  65 - 90 
+        //  a - b  97 - 122
+
+        let fun4 = (str1) =>{
+            return str1.split('').sort((a,b)=>{return a.charCodeAt(0) - b.charCodeAt(0)}).join('')
+            
+        }   
+        let fun5 =(str1) =>{
+            return str1.split('').filter((a)=> {return a.charCodeAt(0)>=65 && a.charCodeAt(0)<=90}).join('') + str1.split('').filter((a)=> {return a.charCodeAt(0)>=97 && a.charCodeAt(0)<=122}).join('') 
+        }
+        let str1 = prompt('enter string')
+        alert('sorted string based on their  Ascii values' + fun4(str1))
+        
+        alert('string with capital first and lower last  ' +  fun5(str1))
+
+        
+        
+        
+
+    </script>
+
+</body>
+</html>

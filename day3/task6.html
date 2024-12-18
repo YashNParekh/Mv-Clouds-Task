@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        
+    </div>
+
+    <script>
+
+        let fun2 = (num1,num2) => {
+            console.log(num1)
+            console.log(Math.pow(2,num2))
+            return Math.floor(num1/(Math.pow(2,num2)))
+        }
+
+        let getNum = (str1) =>{
+            let num = parseInt(prompt(`enter number${str1}`))
+            while (num.toString() == "NaN" ) {
+                    alert('please enter a number ')
+                num = parseInt(prompt(`enter number${str1}`))
+                }
+            return num
+        }
+
+
+        let num1 = getNum('1')
+        let num2 = getNum('2')
+
+        alert(fun2(num1,num2))
+
+
+    </script>
+
+</body>
+</html>

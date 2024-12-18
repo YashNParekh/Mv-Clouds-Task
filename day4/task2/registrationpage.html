@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="temp.css">
+    <script src="temp.js"></script>
+    
+</head>
+<body>
+
+    <div class="main">
+        <div class="innerdivm">
+            
+            <form name="login_form" class="form" action="return  (this.password==this.confirmpassword && checkregistration(this));">
+                <h1 class="formtitle"> Login </h1>
+                <div class="rw">
+                    <label for="name">Name :</label>
+                    <input type="text" name="name" id="name" required placeholder="enter your name">
+                </div>
+                <div class="rw">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email" required placeholder="enter your Email">
+                </div>
+                <div class="rw">
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" id="password" minlength="8" maxlength="14" required placeholder="enter your Password between length of 8 to 14">
+                </div>
+                <div class="rw">
+                    <label for="confirmpassword">Confirm Password :</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" minlength="8" maxlength="14" required placeholder="enter your Password again">
+                </div>
+                <button type="submit" class="submitbutton">Register</button>
+            </form>   
+
+            
+            <div class="redirectbutton">
+                If you have an account
+                <a href="loginpage.html">
+                    Login
+                </a> 
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

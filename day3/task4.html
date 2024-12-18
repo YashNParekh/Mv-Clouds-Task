@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        
+    </div>
+
+    <script>
+        let tag1 = document.getElementsByClassName('main')[0] ;
+        let num = parseInt(prompt('enter number'))
+        while (num.toString() == "NaN") {
+            alert('please enter a number')
+            num = parseInt(prompt('enter number'))
+        }
+
+        for(let i=1 ;i<=10;i++){
+            console.log(i)
+            tag1.innerHTML += `${num} * ${i} = ${num*i} <br>`
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        
+    </div>
+
+    <script>
+
+        let fun1 = (num) => {
+            let sum = 0
+            for (let i of num){
+                sum+=parseInt(i)
+            }
+            sum = sum.toString()
+            while (sum.length>1){sum = sum.split('').reduce((a,b) => parseInt(a)*parseInt(b)).toString()}
+
+            alert(sum)
+        }
+        let num = prompt(`atleast enter more then two number's  `).replaceAll('  ',' ').trim(' ').split(' ')
+        while(num.length<2){
+            alert('atleast enter more then two number')
+            num = prompt(`atleast enter more then two number's  `).replaceAll('  ',' ').trim(' ').split(' ')
+            for (let i of num){
+                if (i.toString() == "NaN") {
+                    alert('please enter all numbers')
+                    num  = []
+                }
+            }
+        }
+        fun1(num)
+
+    </script>
+
+</body>
+</html>

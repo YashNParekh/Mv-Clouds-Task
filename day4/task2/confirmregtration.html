@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="temp.css">
+    <script src="temp.js"></script>
+    
+</head>
+<body>
+
+    <script>
+        if (currentUser == undefined) {
+            window.location = 'loginpage.html'
+        }
+    </script>
+
+    <div class="main">
+        <div class="innerdivm">
+              
+            <div class="form welcomepagedetails">
+                
+
+                <button type="button"></button>
+            </div>
+
+            <div class="redirectbutton">
+                <button onclick="window.history.back()">
+                    Edit details
+                </button> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementsByClassName('welcomepagedetails')[0].innerHTML = `
+            Name : ${currentUser.name}
+            <br><br>
+            Email : ${currentUser.email}
+        `
+
+</script>
+</body>
+</html>

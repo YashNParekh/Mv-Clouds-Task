@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="calcouter">
+            <div id="display" class="cell raw1">0</div>
+            <div class="cell raw10">
+                <span  onClick="func1(this)"  class="numberButton" data-value="AC">AC</span>
+            </div>
+            <div class="cell raw2">
+                <span  onClick="func1(this)" class="numberButton" data-value="9">9</span>
+                <span  onClick="func1(this)" class="numberButton" data-value="8">8</span>
+                <span  onClick="func1(this)" class="numberButton" data-value="7">7</span>
+                <span  onClick="func1(this)" class="numberButton orators" data-value="*">*</span>
+            </div>
+            <div class="cell raw3">
+                <span  onClick="func1(this)" class="numberButton" data-value="6">6</span>
+                <span onClick="func1(this)"  class="numberButton" data-value="5">5</span>
+                <span onClick="func1(this)"  class="numberButton" data-value="4">4</span>
+                <span onClick="func1(this)"  class="numberButton orators" data-value="/">/</span>
+            </div>
+            <div class="cell raw4">
+                <span  onClick="func1(this)" class="numberButton" data-value="3">3</span>
+                <span  onClick="func1(this)" class="numberButton" data-value="2">2</span>
+                <span  onClick="func1(this)" class="numberButton" data-value="1">1</span>
+                <span  onClick="func1(this)" class="numberButton orators" data-value="+">+</span>
+            </div>
+            <div class="cell raw5">
+                <span  onClick="func1(this)" class="numberButton orators" data-value=".">.</span>
+                <span  onClick="func1(this)" class="numberButton" data-value="0">0</span>
+                <span  onClick="func1(this)" class="numberButton orators" data-value="-">-</span>
+                <span  onClick="func1(this)" class="numberButton orators" data-value="=">=</span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        .calcouter{
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 35px 10px;
+            border: 5px double gray;
+            gap: 14px;
+            background: #323A4B;
+            border-radius: 20px;
+        }
+
+        .cell{
+            width: 90%;
+            padding: 15px;
+            color: black;
+            font-size: 40px;
+        }
+        .raw1{
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.315);
+            border-radius: 20px;
+            background: none;
+            padding: 20px 10px;
+            text-align: right;
+            color: white;
+        }
+        .cell:not(.raw1,.raw10){
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: start;
+            gap: 15px;
+        }
+
+
+        .raw10{
+            text-align: center;
+            display: flex;
+            /* justify-content: space-around; */
+            align-items: start;
+            .numberButton{
+                margin-left: 10px;
+                width: 40%;
+            }
+        }
+
+        .numberButton{
+            width: 20%;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: #323A4B;
+            border: 1px solid rgba(128, 128, 128, 0.273);
+            border-radius: 20px;
+            font-size: 40px;
+            color: black;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.315);
+            color: white;
+            transition: 400ms ease-in;
+        }
+        .numberButton:hover{
+            background: #6CF1EE;
+            color: black;
+        }
+        
+        
+
+        .orators{
+            color: #6CF1EE;
+        }
+    </style>
+
+    <script>
+        let sum = 0 
+        let operation = ''
+        let func1 = (e) =>{
+            if (e.dataset.value == '='){
+                try{
+                sum = eval(operation)
+                document.getElementById("display").innerHTML = sum
+                sum =0 
+                operation = ''
+                }
+                catch(e){
+                    document.getElementById("display").innerHTML = "invalid input"
+                    sum = 0 
+                    operation = ''
+                }
+                
+            }
+            else if (e.dataset.value == "AC"){
+                sum = 0 
+                operation = ''
+                document.getElementById("display").innerHTML = sum
+            }
+            else {
+            operation+=e.dataset.value
+            document.getElementById("display").innerHTML = operation
+        }
+        }
+
+    </script>
+    
+    
+    
+
+
+</body>
+</html>

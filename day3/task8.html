@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        
+    </div>
+
+    <script>
+
+        let fun4 = (str1) =>{
+            let len1  = str1.length
+            return len1 - str1.replaceAll('a','').replaceAll('e','').replaceAll('i','').replaceAll('o','').replaceAll('u','').length
+        }   
+        let str1 = prompt('enter string')
+        alert(fun4(str1))
+
+    </script>
+
+</body>
+</html>

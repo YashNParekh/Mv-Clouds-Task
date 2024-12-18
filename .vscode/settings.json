@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
+    "appendstring",
+    "atleast",
     "ballbounce",
+    "calcouter",
     "confpassword",
     "firebaseapp",
     "firebasestorage",
@@ -8,6 +11,8 @@
     "formcontainer",
     "infinitescroll",
     "mainsection",
+    "phonenumber",
+    "welcomepage",
     "XBFB"
   ]
 }
