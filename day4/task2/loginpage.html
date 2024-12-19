@@ -6,13 +6,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="temp.css">
     <script src="temp.js"></script>
+    <script>
+        if (currentUser != undefined) {
+            window.location = 'welcomepage.html'
+        }
+    </script>
+    
     
 </head>
 <body>
 
     <div class="main">
         <div class="innerdivm">
-            <form  name="login_form" class="form" action="welcomepage.html" onsubmit="checklogin(this)">
+            <form  name="login_form" class="form" action="welcomepage.html" onsubmit="return checklogin(this)">
                 <h1 class="formtitle"> Login </h1>
                 <div class="rw">
                     <label for="email">Email :</label>

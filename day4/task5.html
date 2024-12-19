@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    </head>
+    <body>
+    <script>
+        let num = prompt("enter number");
+        while (isNaN(num)) {
+            alert("please enter a number");
+            num = prompt("enter number");
+        }
+        num =  num.toString().split('').map((a)=>parseInt(a))
+        let lastCheckNum = num.shift()
+        let trigger = false
+        let lastString = ''
+        let newNum 
+        while(num.length!=0){
+            newNum = num.shift();
+            if (lastCheckNum+1 == newNum ) {
+                lastString+=lastCheckNum.toString();
+                trigger = true
+            }else if (trigger){
+                lastString+=lastCheckNum.toString()+" "
+                trigger = false
+            }
+            lastCheckNum = newNum
+        }
+        if (trigger) lastString+=lastCheckNum.toString()
+        console.log(lastString)
+        alert(lastString)
+
+    </script>
+    </body>
+</html>

@@ -6,6 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="temp.css">
     <script src="temp.js"></script>
+    <script>
+        alert('hello from registration ')
+        if (currentUser != undefined) {
+            window.location = 'welcomepage.html'
+        }
+    </script>
+    
     
 </head>
 <body>
@@ -13,7 +20,7 @@
     <div class="main">
         <div class="innerdivm">
             
-            <form name="login_form" class="form" action="return  (this.password==this.confirmpassword && checkregistration(this));">
+            <form name="login_form" class="form"  action="confirmregtration.html" onsubmit="return  (this.password.value==this.confirmpassword.value && checkregistration(this));">
                 <h1 class="formtitle"> Login </h1>
                 <div class="rw">
                     <label for="name">Name :</label>

@@ -22,13 +22,16 @@
         <div class="innerdivm">
             
             <div class="form welcomepagedetails">
-                
             </div>
-            
+
             <div class="redirectbutton">
-                <a href="loginpage.html">
+                <button  onclick="
+                    currentUser = undefined;
+                    localStorage.removeItem('currentUser');
+                    window.location.href = 'loginpage.html';
+                ">
                     Logout 
-                </a> 
+                </button> 
             </div>
         </div>
     </div>
@@ -36,9 +39,9 @@
     <script>
 
             document.getElementsByClassName('welcomepagedetails')[0].innerHTML = `
-                Name : ${currentUser.name}
+                Name : ${currentUser?.name}
                 <br><br>
-                Email : ${currentUser.email}
+                Email : ${currentUser?.email}
             `
 
     </script>

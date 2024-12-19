@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="innerdivm">
+            <div name="form"  class="timeselector" >
+                <label for="hour">Hour :</label>
+                <input name="hour" type="number"  onchange="
+                if (this.value < this.min || this.value > this.max) {alert('Please select valid hour'); this.value = ''}
+                "
+                required onclick="this.min = new Date().getHours();" max="24" >
+                <br>
+                <br>
+                <label for="minutes">Minutes :</label>
+                <input name="minutes" type="number"
+                onchange="
+                    if (  this.value < this.min || this.value > this.max) {alert('Please select valid minutes'); this.value = ''}
+                "
+                onclick=" 
+                if (! document.getElementsByName('hour')[0].value ) alert('Please select hour first')
+                else this.min = document.getElementsByName('hour')[0].value>new Date().getHours() ? 0 : new Date().getMinutes()" max="59" >
+                <br>
+                <br>
+                <button type="button" onclick="handleSubmit()" >Show</button>
+                
+            </div>
+            Remaining Time
+            <div class="timetable">
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <style>
+        
+        *{border-radius: 20px;}
+        input,select{border: 1px solid black; border-radius: 10px; padding: 10px;margin: 0px 20px; width: 70px;}
+        .main{height: 100vh;width: 100vw;display: flex;align-items: center;justify-content: center;}
+        .innerdivm{padding: 40px; gap: 50px; width: fit-content;display: flex;align-items: center;justify-content: left;flex-direction: column;border: none;box-shadow: 0px 0px 20px aqua }
+        .timetable,.dateselector{
+            min-width: 40px;
+            padding: 20px; display: flex ;align-items: center;justify-content: center; border: none;box-shadow: 0px 0px 20px black;
+        }
+    </style>
+
+    <script>
+        let interval1 = undefined
+
+        function handleSubmit(){
+            try{
+                hour = document.getElementsByName('hour')[0].value
+                minutes = document.getElementsByName('minutes')[0].value
+                
+                if (interval1)  clearInterval(interval1)
+                if (!( hour || minutes)) throw 'Please select hour and minutes'
+                
+                let time1 = new Date()
+                time1.setHours(hour)
+                time1.setMinutes(minutes)
+
+
+                interval1 = setInterval(()=>{
+                    if (time1 < new Date()) {
+                        clearInterval(interval1)
+                        alert('Time is over')
+                        return
+                    }
+                    let time = new Date(time1 - new Date())
+                    document.getElementsByClassName('timetable')[0].innerHTML = `${time.getUTCHours()} hours ${time.getUTCMinutes()} minutes  ${time.getSeconds()} seconds`
+                    
+                },1000)
+
+                alert('hello')
+
+            }catch(e){
+                alert(e)
+            }
+                
+        }
+    </script>
+
+    
+</body>
+</html>
