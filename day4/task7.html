@@ -6,8 +6,101 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="main">
+        <input type="file" id="fileInput" accept=".txt" />
+        <div class="image_shown">
+
+        </div>
+    </div>
+
+    <style>
+
+        .main{
+            height: 100vh;width: 100vw;display: flex;justify-content: flex-start; align-items: center;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+
+        #fileIput{
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+      
+        
+
+    </style>
     
-    let 
+    
+
+        <script>
+
+            
+
+            let count = (str,char1) => {return  str.length - str.replaceAll(char1,'').length}
+            let findIndex1 = (str,char1) => {return   str.replace(char1,' ').indexOf(char1) }
+
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    let content = e.target.result.trim('\n');
+                    for (let word of content.split('\n')){
+                        findWord = word[0]
+                        curIndex = 0
+                        len  = word.length
+                        wordHist = ''
+
+                        findWord = {}
+                        findLen = word.length+1
+                        if(word.length>2){
+                            function outRec(word,curIndex){
+                                if (curIndex ==len){ 
+                                    return }
+                                else {
+                                    // if (wordHist.includes(word[curIndex])) {return}
+                                    // else (wordHist+=word[curIndex])
+                                    if (count(word.slice(curIndex),word[curIndex])>1){
+                                        let findIndex = findIndex1(word.slice(curIndex),word[curIndex]) +curIndex
+                                        let dist = findIndex - curIndex
+                                        if (dist<findLen){
+                                            findWord = {}
+                                            findWord[word[curIndex]] =  curIndex + " "+ (findIndex)
+                                            findLen = dist
+                                        }
+                                        else if (dist==findLen){
+                                            findWord[word[curIndex]] =  curIndex + " "+ (findIndex)                              
+                                            findLen = dist
+                                            }
+                                        }
+                                        return outRec(word,curIndex+1)
+                                    }
+                                }
+
+                                outRec(word,curIndex)
+                            }
+
+
+                            console.log("word : "+word)
+                            console.log(findWord)
+
+
+
+
+                        document.getElementsByClassName('image_shown')[0].innerHTML +=  ` word : ${word} <br> findWord : ${JSON.stringify(findWord)} <br><br>`    ;
+                    }
+                    
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        </script>
+
+
 
 </body>
 </html>
