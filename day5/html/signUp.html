@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/signIn-Up.css">
+
+</head>
+<body>
+    <div id="main">
+
+        <div class="icon">
+            <a href="home.html">
+                <img src="../images/mainLogo.png" alt="">
+            </a>
+        </div>
+        <div class="inner">
+            <form class="formContainer" id="signUp">
+                <h1 class="title"> Sign Up</h1>
+
+                <label for="name">Name : </label>
+                <input  name="name" id="name" type="text"  placeholder="enter Your Name">
+                
+                <label for="email">Email : </label>
+                <input name="email" id="email" type="email" required  placeholder="enter Your Email">
+                
+                <label for="password">Password : </label>
+                <input name="password" id="password" type="password" minlength="8" maxlength="16" required  placeholder="enter Your Password">
+
+                <label for="confirmPassword">Confirm Password :  </label>
+                <input name="confirmPassword" id="confirmPassword" minlength="8" maxlength="16"  required type="password" placeholder="enter Your Password again">
+                
+                
+                <span class="line"></span>
+
+                <button type="submit">
+                    Submit
+                </button>
+                
+            </form>
+            <div class="T1">
+                <span>  Already have account <a href="signIn.html">SignIn</a></span>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="module" src="../js/signUp.js">
+    </script>
+    <script>
+        let element =  document.getElementsByTagName('input')
+        console.log(element.length)
+        // console.log(element[0])
+        for (let i=0;i<element.length;i++){
+            element[i].addEventListener(onchange,(e)=>{
+                console.log(e.target.value)
+                element[i].value = e.target.value;
+            })
+        }
+        
+    </script>
+    
+
+</body>
+</html>

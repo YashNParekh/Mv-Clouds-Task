@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/signIn-Up.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div class="icon">
+            <a href="home.html">
+                <img src="../images/mainLogo.png" alt="" />
+            </a>
+        </div>
+        <div class="inner">
+            <form class="formContainer" id="signIn" >
+                <h1 class="title">Sign In</h1>
+
+                <label for="email">Email : </label>
+                <input required name="email" id="email" type="email" placeholder="enter Your Email" />
+
+                <label for="password">Password : </label>
+                <input required name="password" id="password" type="password" placeholder="enter Your Password" />
+
+                <span class="line"></span>
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+
+            <div class="T1">
+                <span>
+                    New to
+                    <h2>webpulser</h2>
+                    <a href="signUp.html">SignUp</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="../js/signIn.js">
+    </script>
+    <script>
+        let element =  document.getElementsByTagName('input')
+        console.log(element.length)
+        // console.log(element[0])
+        for (let i=0;i<element.length;i++){
+            element[i].addEventListener(onchange,(e)=>{
+                console.log(e.target.value)
+                element[i].value = e.target.value;
+            })
+        }
+        
+    </script>
+
+</body>
+
+</html>

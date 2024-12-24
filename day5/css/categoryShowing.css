@@ -1,0 +1,77 @@
+
+
+
+
+#main{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* card css  */
+
+.category-container {
+	position: relative;
+	width: 80%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 20px;
+	border-radius: 20px;
+	flex-wrap: wrap;
+	gap: 20px;
+	
+}
+
+
+
+.category-card {
+
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #333;
+	border-radius: 20px;
+	padding:10px;
+	gap: 20px;
+	max-width: 400px;
+	color: #ccc;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.category-card img {
+	aspect-ratio: 2/1.1;
+	object-fit: fill;
+	max-height: 150px;
+	max-width: 90vh;
+}
+
+.category-card h3
+ {
+	text-align: center;
+	margin: 0;
+	color: #fff;
+}
+
+
+.category-card .buy-btn,.buy-btn-add-cart {
+	padding: 0.8em 2em;
+	background-color: #ccc;
+	color: #101010;
+	border: none;
+	border-radius: 0.25em;
+	cursor: pointer;
+	font-size: 14px;
+	align-self: center;
+}
+
+.category-card .buy-btn:hover {
+	background-color: #eaeaea;
+}
+
+.category-card:hover {
+	background-color: #444;
+}
