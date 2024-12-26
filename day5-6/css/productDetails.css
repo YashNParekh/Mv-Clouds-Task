@@ -1,3 +1,197 @@
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#productDetailsContainer{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;  
+    gap: 10px;  
+}
+
+.section1{
+    flex-shrink: 1;
+    width: fit-content;
+    border: 1px solid aqua;
+    box-shadow: 0px 0px 13px 2px black;;
+    border-radius: 20px;
+    img{
+        padding: 30px;
+        height: auto;
+        max-width: min( 90vw,550px);
+        aspect-ratio: 1/1.1;
+        object-fit: fill;
+    }
+}
+
+.section2{
+    text-wrap-mode:wrap ;
+    padding: 40px;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    
+    span{
+        display: block;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .priceContainer{
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+
+    .AddToCartButton{
+        background-color: rgb(78, 219, 78);
+        img{
+            display: inline;
+        }
+    }
+    .RemoveCartButton{
+        background-color: red;
+        img{
+            display: none;
+        }
+    }
+
+    .buyNowButton{
+        background-color: blue;
+    }
+
+    font-size: 20px;
+    button{
+        padding: 10px;
+        background: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+        background: lightgrey;
+        font-size: 20px;
+        transition: 100ms linear;
+    }
+    
+    button:not(button:disabled):hover{
+        box-shadow: 0px 0px 5px 1px black;
+    }
+    .wishlistButtonContainer:hover{
+        filter: drop-shadow(0 0 .75rem crimson);
+    }
+
+    .AllButtonContainer{
+        display: inline-flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        
+        
+        .quantityCountContainer{
+            display: inline-flex;
+            gap: 10px;
+            
+            .quantityCountButton{
+                background: rgb(48, 47, 47);
+            }
+        }
+        
+
+        .wishlistButtonContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 100ms linear;
+
+            img{
+                max-height: 30px;
+                object-fit: contain;
+                aspect-ratio: 1/1;
+            }
+        }
+    }   
+}
+
+
+
+
+.category-container {
+	position: relative;
+	width: 80%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 20px;
+	border-radius: 20px;
+	flex-wrap: wrap;
+	gap: 20px;
+	
+}
+
+
+
+.category-card {
+
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #333;
+	border-radius: 20px;
+	padding:10px;
+	gap: 20px;
+	max-width: 400px;
+	color: #ccc;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.category-card img {
+	aspect-ratio: 2/1.1;
+	object-fit: fill;
+	max-height: 150px;
+	max-width: 90vh;
+}
+
+.category-card h3
+ {
+	text-align: center;
+	margin: 0;
+	color: #fff;
+}
+
+
+.category-card .buy-btn,.buy-btn-add-cart {
+	padding: 0.8em 2em;
+	background-color: #ccc;
+	color: #101010;
+	border: none;
+	border-radius: 0.25em;
+	cursor: pointer;
+	font-size: 14px;
+	align-self: center;
+}
+
+.category-card .buy-btn:hover {
+	background-color: #eaeaea;
+}
+
+.category-card:hover {
+	background-color: #444;
+}
+
 
 
 

@@ -32,8 +32,6 @@ window.onload = () => {
                         selectSection.innerHTML += `<option value="${key}" id="${key}" selected  class="navitem">${key}</option>`
                     }
                 });
-
-
             } else {
                 console.log("No data available");
             }
@@ -41,13 +39,9 @@ window.onload = () => {
         selectSection.disabled = false
     }
 
-
-
-
     var href1 = new String(window.location);
     let category = href1.split('?')[1].split('=')[1]
     addSelect(href1.split('?')[1].split('=')[1])
-
 
     let category_container = document.getElementsByClassName('category-container')[0]
     category_container.innerHTML =''
@@ -56,25 +50,24 @@ window.onload = () => {
     data.map((data,index)=>{
         if (category==data.category){
         category_container.innerHTML+=`
-            <a href="#" class="category-card">
+            <div  class="category-card">
                 <img src="${data.imageUrl}" alt="Product 1">
-                <h3> Silver Watch  <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
-                <button class="buy-btn-add-cart"  value="${index}" >addToCart</button>
-                <button class="buy-btn"  value="${index}" >Show Product</button>
-            </a> 
+                <h3> ${data.title} <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
+                <button class="buy-btn-add-cart"  value="${index} ${data.category}" >addToCart</button>
+                <button class="buy-btn"  value="${index} ${data.category}" >Show Product</button>
+            </div> 
             `
         }
         })
-    
     
     }else {
     data.map((data,index)=>{
         category_container.innerHTML+=`
             <div  class="category-card">
                 <img src="${data.imageUrl}" alt="Product 1">
-                <h3> Silver Watch  <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
-                <button class="buy-btn-add-cart"  value="${index}" >addToCart</button>
-                <button class="buy-btn"  value="${index}" >Show Product</button>
+                <h3> ${data.title}  <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
+                <button class="buy-btn-add-cart"   value="${index} ${data.category}" >addToCart</button>
+                <button class="buy-btn"  value="${index} ${data.category}" >Show Product</button>
             </div> 
             `
         })
@@ -82,7 +75,9 @@ window.onload = () => {
     
     Array.from(document.getElementsByClassName('buy-btn')).forEach(element => {
         element.addEventListener('click', (e) => {
-            window.location = `productDetails.html?productId=${e.target.value}`
+            let productID = e.target.value.split(' ')[0]
+            let category = e.target.value.split(' ')[1]
+            window.location = `productDetails.html?productId=${productID}&category=${category}`
         })
     });
     Array.from(document.getElementsByClassName('buy-btn-add-cart')).forEach(element => {
@@ -93,8 +88,10 @@ window.onload = () => {
             }
             let uid = JSON.parse(user).user.uid
             try{
-                let productID = e.target.value
-                let ref1 =ref(db,`Cart/${uid}/${productID}`);
+                
+                let productID = e.target.value.split(' ')[0]
+                let category = e.target.value.split(' ')[1]
+                let ref1 =ref(db,`Cart/${uid}/${category}/${productID}`);
                 get(ref1).then((e)=>{
                     if(!e.exists()){
                         set(ref1,{
@@ -109,10 +106,9 @@ window.onload = () => {
             }catch(e){
                 alert('not able to add' + e)
             }
-            alert(uid)
-            alert(e.target.value)
+            alert('added to cart')
+            // alert(uid)
+            // alert(e.target.value)
         })
     });
-    
-
 }

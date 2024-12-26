@@ -22,6 +22,14 @@ class Temp3 {
     }
 
 }
+class Temp30 {
+    String name;
+
+    Temp30(String name) {
+        this.name = name;
+    }
+
+}
 
 
 

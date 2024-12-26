@@ -10,7 +10,7 @@ import {
   db
 } from './db.js';
 
-
+import {data} from './offlineProduct.js'
 
 
 // info: this is copy from https://codepen.io/thenutz/pen/VwYeYEE
@@ -105,4 +105,13 @@ window.onload = () => {
 
   }
   addThings();
+
+  let searchBar = document.getElementsByClassName('searchBar')[0];
+  let searchBarText = document.getElementsByClassName('searchText')[0];
+  
+  
+
+
+
+
 }
