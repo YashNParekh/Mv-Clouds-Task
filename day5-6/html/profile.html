@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../css/profile.css">
     
+    <script type="module"> 
+        import {uid} from '../js/db.js';
+        if(!uid) window.location = "signIn.html";
+    </script>
     
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="module" src="../js/main.js"></script>
 
-    <script src="../js/User.js"></script>
-    <script> 
-        if(!user) window.location = "signIn.html"
-    </script>
     
   </head>
 
@@ -22,29 +22,33 @@
     <nav id="mainNav"></nav>
     <main id="main">
 
-      <div id="profilecotainer">
-        
-        <section id="profileSection1">
-
-
-          <div class="icon">  </div>
-          
-        </section>
-        <span class="line"></span>
-        <section id="profileSection2"></section>
-
-      </div>
-      
-      
-      
-      
-   
       
       
     </main>
     <footer id="footer"></footer>
 
-    
+
+    <script type="module">
+        import {email,name} from '../js/db.js';
+
+        document.getElementById('main').innerHTML+=`
+        <div class="name">
+        <h1> Welcome ${name}! </h1>
+      </div>
+      <div class="email">
+        <h1>Email : <span>${email}</span></h1>
+      </div>
+
+      <div class="logout">
+          <button onclick="window.localStorage.clear();window.location='home.html'" >
+              Logout
+          </button>
+      </div>`
+        
+        
+        
+    </script>
+
   </body>
  
 </html>

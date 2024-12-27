@@ -18,8 +18,11 @@ export let db = getDatabase(app);
 export let auth = getAuth(app);
 
 export let user = localStorage.getItem('user');
-
 export let uid = JSON.parse(user)?.user?.uid
+export let email = JSON.parse(user)?.user?.email
+export let name = JSON.parse(user)?.user?.providerData[0].displayName;
+console.log(JSON.parse(user)?.user?.providerData[0])
+
 
 
 

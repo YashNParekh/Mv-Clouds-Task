@@ -1,8 +1,6 @@
 import { db, auth,uid } from './db.js'
 import { get, ref, set, remove } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
-import { data } from './offlineProduct.js'
 
-let data1 = data;
 let herf1 = new String(window.location).split("?")[1].split('&')
 
 let PID = herf1[0].split('=')[1]
@@ -19,10 +17,11 @@ window.onload = async () => {
     let data;
 
 
-    await get(ref(db, `Data/${PID}`)).then((snapshot) => {
+    await get(ref(db, `Data/${PID}`)).then( async (snapshot) => {
         if (snapshot.exists()) {
             console.log(snapshot.val());
             data = snapshot.val();
+            productDetailsContainer.innerHTML="";
             productDetailsContainer.innerHTML =
                 `
                 <section class="section1">
@@ -73,6 +72,9 @@ window.onload = async () => {
                 `
 
             let category_container = document.getElementsByClassName('category-container')[0]
+            let data1 = await get(ref(db,'Data/'));
+            if (data1.exists()) {data1 = data1.val()}
+            
             category_container.innerHTML = ''
             data1.map((data, index) => {
                 category_container.innerHTML += `

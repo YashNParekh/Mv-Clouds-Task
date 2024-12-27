@@ -11,7 +11,6 @@ import {
   uid
 } from './db.js';
 
-import {data} from './offlineProduct.js'
 
 
 // info: this is copy from https://codepen.io/thenutz/pen/VwYeYEE
