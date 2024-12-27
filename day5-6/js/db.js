@@ -17,5 +17,10 @@ export let app = initializeApp(firebaseConfig);
 export let db = getDatabase(app);
 export let auth = getAuth(app);
 
+export let user = localStorage.getItem('user');
+
+export let uid = JSON.parse(user)?.user?.uid
+
+
 
 auth.languageCode = 'EN';

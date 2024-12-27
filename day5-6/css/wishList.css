@@ -210,10 +210,11 @@ input{
 /*CART SECTION*/
 
 .cart{
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .cart-item-box{
@@ -224,8 +225,6 @@ input{
 #product-cards{
     
     
-    max-height: 550px;
-    overflow: scroll;
     /* border-radius: 30px; */
     /* max-width: 120%; */
     /* padding: 10px; */
@@ -236,11 +235,7 @@ input{
         
     }
 
-    &::after,&::before{
-        content: '';
-        display: block;
-        box-shadow: 0px 0px 10px 3px black;
-    }
+
 }
 
 

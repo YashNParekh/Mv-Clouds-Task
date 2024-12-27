@@ -52,7 +52,7 @@ window.onload = () => {
         category_container.innerHTML+=`
             <div  class="category-card">
                 <img src="${data.imageUrl}" alt="Product 1">
-                <h3> ${data.title} <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
+                <span> ${data.title} <span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </span> 
                 <button class="buy-btn-add-cart"  value="${index} ${data.category}" >addToCart</button>
                 <button class="buy-btn"  value="${index} ${data.category}" >Show Product</button>
             </div> 
@@ -65,7 +65,7 @@ window.onload = () => {
         category_container.innerHTML+=`
             <div  class="category-card">
                 <img src="${data.imageUrl}" alt="Product 1">
-                <h3> ${data.title}  <br><span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </h3> 
+                <span> ${data.title}  <span class="princeSpan" style="font-weight: 900;">Price : <sup  style="font-size: 10px;">$</sup> ${data.price}</span> </span> 
                 <button class="buy-btn-add-cart"   value="${index} ${data.category}" >addToCart</button>
                 <button class="buy-btn"  value="${index} ${data.category}" >Show Product</button>
             </div> 
@@ -91,14 +91,16 @@ window.onload = () => {
                 
                 let productID = e.target.value.split(' ')[0]
                 let category = e.target.value.split(' ')[1]
-                let ref1 =ref(db,`Cart/${uid}/${category}/${productID}`);
+                let ref1 =ref(db,`Cart/${uid}/${productID}`);
                 get(ref1).then((e)=>{
                     if(!e.exists()){
                         set(ref1,{
+                            category: category,
                             count: 1 
                         })                    
                 }else{
                     set(ref1,{
+                        category: category,
                         count: e.val().count+1
                     })
                 }

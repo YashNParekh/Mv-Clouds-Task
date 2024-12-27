@@ -40,6 +40,7 @@
 	color: #ccc;
 	text-decoration: none;
 	transition: background-color 0.3s ease;
+	text-wrap-mode:wrap ;
 }
 
 .category-card img {
@@ -49,8 +50,15 @@
 	max-width: 90vh;
 }
 
-.category-card h3
+.category-card span
  {
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-wrap-mode: wrap;
+	flex-wrap: wrap;
 	text-align: center;
 	margin: 0;
 	color: #fff;

@@ -7,7 +7,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 import {
   auth,
-  db
+  db,
+  uid
 } from './db.js';
 
 import {data} from './offlineProduct.js'
@@ -103,13 +104,24 @@ window.onload = () => {
           }
       })
 
+
+
   }
   addThings();
 
-  let searchBar = document.getElementsByClassName('searchBar')[0];
-  let searchBarText = document.getElementsByClassName('searchText')[0];
-  
-  
+
+//   let account = document.getElementById('account');
+//   account.addEventListener('click',(e)=>{
+//     if(uid){
+//         account.target.setAttribute('data-after', 'Hello');
+//     }
+//     else {
+//         window.location ="signIn.html";
+//     }
+//   })
+
+    
+
 
 
 
