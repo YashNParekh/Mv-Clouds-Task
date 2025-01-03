@@ -11,9 +11,9 @@
     display: flex;
 
     .firstcircle,.secondcircle{
-        height: 300px ;
+        aspect-ratio: 1/1;
         width:  300px ;
-        background: #5505;
+        background: red;
         border-radius: 50%;
     }
     .secondcircle{

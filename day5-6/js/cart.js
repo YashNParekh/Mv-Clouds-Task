@@ -74,7 +74,7 @@ async function checkCart(NextStep,addSelect){
                 <div style="margin:20px;padding:10px;display:flex;flex-direction: column;gap:10px;">
                 <h2>Your cart is empty</h2>
                 <p>Looks like you haven't added anything to your cart yet.</p>
-                <button style="border:1px solid black; background:lightgrey;border-radius: 6px;padding:20px"  onclick="window.location = 'http://127.0.0.1:5500/html/categoryShowing.html?category=All'"  >Shop Now</button>
+                <button style="border:1px solid black; background:lightgrey;border-radius: 6px;padding:20px"  onclick="window.location = 'categoryShowing.html?category=All'"  >Shop Now</button>
                 </div>
                 `
                 }
